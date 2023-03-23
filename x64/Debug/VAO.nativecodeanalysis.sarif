@@ -1,0 +1,67 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32215.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/kacper/desktop/youtubeopengl 4 - organizing/vao.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "9d7c638f65870f1086d381f559b351e6793bb935fdb02835e55bcea997dbca54"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/kacper/desktop/youtubeopengl 4 - organizing/vao.h"
+          },
+          "hashes": {
+            "sha-256": "7e7c86f9d888658d97a6aa3f076e54961e1453f8ca69a7838ca0af7ed6aa9a69"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/kacper/desktop/youtubeopengl 4 - organizing/libraries/include/glad/glad.h"
+          },
+          "hashes": {
+            "sha-256": "fc3db2e87da16bacf634ac91ac4d82c0a78a813e63a634e2528a98528b12690b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/kacper/desktop/youtubeopengl 4 - organizing/libraries/include/khr/khrplatform.h"
+          },
+          "hashes": {
+            "sha-256": "e206a6931f98ffe1c5c7ece69c4f94bbe1c9279243f40cbe7782848a0d3fa2de"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/kacper/desktop/youtubeopengl 4 - organizing/vbo.h"
+          },
+          "hashes": {
+            "sha-256": "6c1b89a692eb1e50314f51eaa69f0bfd0f01e19337bff9631ed731063e98c7a7"
+          }
+        }
+      ]
+    }
+  ]
+}

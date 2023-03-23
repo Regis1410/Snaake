@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+      <FILENAME>Kwadrat.cpp</FILENAME>
+      <LINE>96</LINE>
+      <COLUMN>46</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Przepełnienie arytmetyczne: użycie operatora „+” dla wartości bajtowej 4, a następnie rzutowanie wyniku na wartość bajtową 8. Rzutuj wartość na szerszy typ przed wywołaniem operatora „+” w celu uniknięcia przepełnienia (io.2).</DESCRIPTION>
+    <FUNCTION>Kwadrat::Growsnake</FUNCTION>
+    <DECORATED>?Growsnake@Kwadrat@@QEAAXXZ</DECORATED>
+    <FUNCLINE>89</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+      <FILENAME>Kwadrat.cpp</FILENAME>
+      <LINE>97</LINE>
+      <COLUMN>43</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Przepełnienie arytmetyczne: użycie operatora „+” dla wartości bajtowej 4, a następnie rzutowanie wyniku na wartość bajtową 8. Rzutuj wartość na szerszy typ przed wywołaniem operatora „+” w celu uniknięcia przepełnienia (io.2).</DESCRIPTION>
+    <FUNCTION>Kwadrat::Growsnake</FUNCTION>
+    <DECORATED>?Growsnake@Kwadrat@@QEAAXXZ</DECORATED>
+    <FUNCLINE>89</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+      <FILENAME>Kwadrat.cpp</FILENAME>
+      <LINE>220</LINE>
+      <COLUMN>21</COLUMN>
+    </SFA>
+    <DEFECTCODE>6385</DEFECTCODE>
+    <DESCRIPTION>Odczytywanie nieprawidłowych danych z elementu „Cordinate_of1_square”.</DESCRIPTION>
+    <FUNCTION>Kwadrat::Movement</FUNCTION>
+    <DECORATED>?Movement@Kwadrat@@QEAAXAEBH@Z</DECORATED>
+    <FUNCLINE>150</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>154</LINE>
+        <COLUMN>10</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>Element „Cordinate_of1_square” jest tablicą, liczba elementów: 1 (bajty: 4)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>156</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>156</LINE>
+        <COLUMN>19</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>158</LINE>
+        <COLUMN>26</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>156</LINE>
+        <COLUMN>38</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>156</LINE>
+        <COLUMN>19</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>163</LINE>
+        <COLUMN>24</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Pomiń to rozgałęzienie (przyjmowane jest, że element „Direction_Movement==1” ma wartość false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>180</LINE>
+        <COLUMN>24</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Pomiń to rozgałęzienie (przyjmowane jest, że element „Direction_Movement==2” ma wartość false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>194</LINE>
+        <COLUMN>24</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Pomiń to rozgałęzienie (przyjmowane jest, że element „Direction_Movement==3” ma wartość false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>211</LINE>
+        <COLUMN>24</COLUMN>
+        <KEYEVENT>
+          <ID>5</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Wejdź do tego rozgałęzienia (przyjmowane jest: „Direction_Movement==4”)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>213</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>214</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>215</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>216</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>218</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>218</LINE>
+        <COLUMN>21</COLUMN>
+        <KEYEVENT>
+          <ID>6</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Wejdź do tej pętli (przyjmowane jest: „i!=this-&gt;vertNum”)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>220</LINE>
+        <COLUMN>21</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>218</LINE>
+        <COLUMN>40</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>218</LINE>
+        <COLUMN>21</COLUMN>
+        <KEYEVENT>
+          <ID>7</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Kontynuuj tę pętlę (przyjmowane jest: „i!=this-&gt;vertNum”)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\</FILEPATH>
+        <FILENAME>Kwadrat.cpp</FILENAME>
+        <LINE>220</LINE>
+        <COLUMN>21</COLUMN>
+        <KEYEVENT>
+          <ID>8</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>Nieprawidłowy odczyt z elementu „Cordinate_of1_square[1]” (czytelny zakres od 0 do 0)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+</DEFECTS>

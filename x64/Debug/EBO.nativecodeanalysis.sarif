@@ -1,0 +1,59 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32215.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/kacper/desktop/youtubeopengl 4 - organizing/ebo.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "6bfd33fdfbd4880709310db1408d6910ab31267c14e2c066c7d4575229d542b6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/kacper/desktop/youtubeopengl 4 - organizing/ebo.h"
+          },
+          "hashes": {
+            "sha-256": "3475d5f29a495a0776fe39202096a84fe73a2f2a03066e58f97e8702869b8f83"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/kacper/desktop/youtubeopengl 4 - organizing/libraries/include/glad/glad.h"
+          },
+          "hashes": {
+            "sha-256": "fc3db2e87da16bacf634ac91ac4d82c0a78a813e63a634e2528a98528b12690b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/kacper/desktop/youtubeopengl 4 - organizing/libraries/include/khr/khrplatform.h"
+          },
+          "hashes": {
+            "sha-256": "e206a6931f98ffe1c5c7ece69c4f94bbe1c9279243f40cbe7782848a0d3fa2de"
+          }
+        }
+      ]
+    }
+  ]
+}

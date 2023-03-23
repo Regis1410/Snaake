@@ -1,0 +1,4 @@
+C:\Users\Kacper\Desktop\Nowy folder (3)\YoutubeOpenGL 4 - Organizing\x64\Debug\YoutubeOpenGL.exe
+C:\Users\Kacper\Desktop\YoutubeOpenGL 4 - Organizing\x64\Debug\YoutubeOpenGL.exe
+C:\Users\Kacper\Desktop\Nowy folder (5)\YoutubeOpenGL 4 - Organizing\x64\Debug\YoutubeOpenGL.exe
+C:\Users\Kacper\Desktop\Snake_2023\x64\Debug\Snake01.exe
