@@ -22,7 +22,7 @@ VAO addbricktosnake(VAO VAO1, VAO VAO3);
 
 VAO MoveSnake(VAO VAO1);
 
-VAO Game_over(VAO VAO1);
+VAO Game_over_wall(VAO VAO1);
 
 
 
@@ -201,8 +201,7 @@ EBO3.Unbind();
 		//Drawing snake 
 		addbricktosnake(VAO1,VAO3);
 		MoveSnake(VAO1);
-		Game_over(VAO1);
-
+		Game_over_wall(VAO1);
 
 		// Specify the color of the background
 		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
@@ -276,8 +275,9 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 	if (key == GLFW_KEY_E && action == GLFW_PRESS)
 
 	{
-		std::cout <<std::endl<< " " << K1.x << " " << K1.y<<std::endl;
-		K1.X_y_addon_snake();
+		//std::cout <<std::endl<< " " << K1.vertices[0] + 0.05 << " " << K1.vertices[1] - 0.05 <<std::endl;
+		std::cout << std::endl << " " << std::fixed << std::setprecision(2) << K1.vertices[0] + 0.05 << " " << std::fixed << std::setprecision(2) << K1.vertices[1] - 0.05 << std::endl;
+		//K1.X_y_addon_snake();
 	}
     
 
@@ -413,16 +413,40 @@ VAO MoveSnake(VAO VAO1)
 }
 
 
-VAO Game_over(VAO VAO1)
+VAO Game_over_wall(VAO VAO1)
 {
 	
+
+
+
+	//colision snake
+	for (int i = 0; i != K1.vertNum; i = i + 12) {
+		if (K1.vertices[0] == K1.vertices[12 + i] && K1.vertices[1] == K1.vertices[13 + i])
+		{
+			K1.reset_snake();
+			K1.Number_additional_squares = 0;
+
+			VAO1.Bind();
+			// Generates Vertex Buffer Object and links it to vertices
+			VBO VBO1(K1.vertices, K1.sizevertices);
+			// Generates Element Buffer Object and links it to indices
+
+			EBO EBO1(K1.indices, K1.sizeindices);
+
+			VAO1.LinkVBO(VBO1, 0);
+
+			VAO1.Unbind();
+			VBO1.Unbind();
+			EBO1.Unbind();
+			return VAO1;
+		}
+	}
 	
 	
 	
 	
 	
-	
-	
+	//colisiont to border
 	if ( ((K1.x == 100)||(K1.x==-100)) || ((K1.y == 100) || (K1.y == -100)))
 	{
 
@@ -444,4 +468,14 @@ VAO Game_over(VAO VAO1)
 		return VAO1;
 	}
      
+
+
+
+
+
+
+
+
+
+
 }

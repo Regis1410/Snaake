@@ -71,6 +71,9 @@ Kwadrat::Kwadrat()
 
 };
 
+
+
+
 void Kwadrat::reset_snake()
 {
 
@@ -219,8 +222,8 @@ void Kwadrat::X_y_addon_snake()
 	if (Number_additional_squares != 0)
 	{
 
-		double temp_x;
-		double temp_y;
+		GLfloat temp_x;
+		GLfloat temp_y;
 		int indic = 12;
 		for (int i = 0; i != Number_additional_squares; i++)
 		{
@@ -233,6 +236,9 @@ void Kwadrat::X_y_addon_snake()
 			indic += 1;
 			std::cout << temp_x << " " << temp_y << std::endl;
 		}
+	
+	
+	
 	}
 }
 
