@@ -21,10 +21,12 @@ public:
 	int sizeindices;
 	GLfloat* vertices;
 	GLuint* indices;
+
 	GLfloat x;
 	GLfloat y;
+
 	int Number_additional_squares;
-	std::vector<std::vector<GLfloat>> Colission;
+
 
 	Kwadrat();
 	void Growsnake();
@@ -32,7 +34,6 @@ public:
 	void reset_snake();
 	void X_y_addon_snake();
 	
-
 
 
 

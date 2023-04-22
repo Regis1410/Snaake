@@ -7,12 +7,14 @@ void Fruit::Fruit_location()
 	//random x 
 	int random_x = (rand() % 183) - 100;
 
+	
+
 	if (random_x % 10 != 0)
 	{
 		random_x = random_x - (random_x % 10);
 	}
 
-	double double_random_x;
+	GLfloat double_random_x;
 	double_random_x = ((double)random_x / 100) - 0.02;
 
 
@@ -24,13 +26,41 @@ void Fruit::Fruit_location()
 		random_y = random_y - (random_y % 10);
 	}
 
-	double double_random_y;
+	GLfloat double_random_y;
 	double_random_y = ((double)random_y / 100) + 0.02;
 
 
+	
+
+	//if fruit gets old fruit location 
+	while (random_x == this->xx && random_y == this->yy)
+	{
+
+		 random_x = (rand() % 183) - 100;
+
+		if (random_x % 10 != 0)
+		{
+			random_x = random_x - (random_x % 10);
+		}
+
+		double_random_x = ((double)random_x / 100) - 0.02;
 
 
-	std::cout << random_x << " " << random_y;
+		//random y
+		 random_y = (rand() % 183) - 100;
+
+		if (random_y % 10 != 0)
+		{
+			random_y = random_y - (random_y % 10);
+		}
+		double_random_y = ((double)random_y / 100) + 0.02;
+		std::cout << "test";
+
+	}
+
+	this->yy = random_y;
+	this->xx = random_x;
+
 	x = random_x;
 	y = random_y;
 	//making fruit small
@@ -47,6 +77,11 @@ void Fruit::Fruit_location()
 	// lower rigth corner
 	this->vertices[9] = double_random_x + 0.04;
 	this->vertices[10] = double_random_y - 0.04;
+
+	
+	
+
+
 }
 
 Fruit::Fruit()

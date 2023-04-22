@@ -7,20 +7,26 @@
 #include"VBO.h"
 #include"EBO.h"
 #include"Kwadrat.h"
+#include"Wall.h"
 #include<conio.h>
 #include "Fruit.h"
 #include <iomanip>
+#include <cmath>
 Fruit f1;
 Kwadrat K1;
+Wall W1;
 int register_to_grow=0;
 int register_to_move;
 int Direction_Movement;
+int Auto_Direction_Movement=2137;
 int dont_go_back;
+int auto_move;
+GLfloat speed_movement = 0.00f;
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 
 VAO addbricktosnake(VAO VAO1, VAO VAO3);
 
-VAO MoveSnake(VAO VAO1);
+VAO MoveSnake(VAO VAO1,double &prevtime,double &funtime);
 
 VAO Game_over_wall(VAO VAO1);
 
@@ -167,9 +173,14 @@ int main()
 	EBO EBO3(f1.indices, f1.sizeindices);
 	VAO3.LinkVBO(VBO3, 0);
 
+	          //// Walls \\\\
 
-
-
+	VAO VAO4;
+	VAO4.Bind();
+	VBO VBO4(W1.vertices, W1.sizevertices);
+	EBO EBO4(W1.indices, W1.sizeindices);
+	VAO4.LinkVBO(VBO4, 0);
+	
 	
 	
 	// Unbind all to prevent accidentally modifying them
@@ -186,22 +197,29 @@ VAO3.Unbind();
 VBO3.Unbind();
 EBO3.Unbind();
 
+VAO4.Unbind();
+VBO4.Unbind();
+EBO4.Unbind();
 
-
+double PrevTime = glfwGetTime();
 
 	// Main while loop
 	while (!glfwWindowShouldClose(window))
 	{
 
 		
-
+		double funTime = glfwGetTime();
 
 
 
 		//Drawing snake 
 		addbricktosnake(VAO1,VAO3);
-		MoveSnake(VAO1);
+		
+		MoveSnake(VAO1,PrevTime,funTime);
 		Game_over_wall(VAO1);
+		
+		
+		
 
 		// Specify the color of the background
 		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
@@ -220,10 +238,7 @@ EBO3.Unbind();
 		// Draw primitives, number of indices, datatype of indices, index of indices
        	glDrawElements(GL_TRIANGLES, 300, GL_UNSIGNED_INT, 0);
 
-
-		
-		
-		//Drawing border 
+        	//Drawing border 
 		
 		VAO2.Bind();
 		
@@ -233,7 +248,9 @@ EBO3.Unbind();
 		VAO3.Bind();
 		glDrawElements(GL_TRIANGLES, 100, GL_UNSIGNED_INT, 0);
 
-
+		//Wall
+		VAO4.Bind();
+		glDrawElements(GL_TRIANGLES, 100, GL_UNSIGNED_INT, 0);
 
 
 
@@ -272,11 +289,13 @@ EBO3.Unbind();
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
 
 
-	if (key == GLFW_KEY_E && action == GLFW_PRESS)
+	if ((key == GLFW_KEY_E && action == GLFW_PRESS))
 
 	{
+		
+		
 		//std::cout <<std::endl<< " " << K1.vertices[0] + 0.05 << " " << K1.vertices[1] - 0.05 <<std::endl;
-		std::cout << std::endl << " " << std::fixed << std::setprecision(2) << K1.vertices[0] + 0.05 << " " << std::fixed << std::setprecision(2) << K1.vertices[1] - 0.05 << std::endl;
+		//std::cout << std::endl << " " << std::fixed << std::setprecision(2) << K1.vertices[0] + 0.05 << " " << std::fixed << std::setprecision(2) << K1.vertices[1] - 0.05 << std::endl;
 		//K1.X_y_addon_snake();
 	}
     
@@ -288,6 +307,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 		{
 			register_to_move = 1;
 			Direction_Movement = 1;
+			Auto_Direction_Movement = 1;
 			dont_go_back = 0;
 		}
 	}
@@ -300,6 +320,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 		{
 			register_to_move = 1;
 			Direction_Movement = 3;
+			Auto_Direction_Movement = 3;
 			dont_go_back = 1;
 		}
 	}
@@ -311,6 +332,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 		{
 			register_to_move = 1;
 			Direction_Movement = 2;
+			Auto_Direction_Movement = 2;
 			dont_go_back = 2;
 		}
 	}
@@ -321,6 +343,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 	    {
 			register_to_move = 1;
 			Direction_Movement = 4;
+			Auto_Direction_Movement = 4;
 			dont_go_back = 3;
 		}
 
@@ -333,6 +356,7 @@ VAO addbricktosnake(VAO VAO1, VAO VAO3)
 	if ((K1.x == f1.x)&&(K1.y==f1.y))
 	{
 		
+		speed_movement = speed_movement + 0.005f;
 		//new fruit location
 
 		f1.Fruit_location();
@@ -378,16 +402,16 @@ VAO addbricktosnake(VAO VAO1, VAO VAO3)
 
 	
 }
-VAO MoveSnake(VAO VAO1)
+VAO MoveSnake(VAO VAO1, double &prevtime, double &funtime)
 {
-
 	
-	if (register_to_move == 1)
+	if (funtime - prevtime >= 0.2-speed_movement)
 	{
-
 	
 
-		K1.Movement(Direction_Movement);
+		K1.Movement(Auto_Direction_Movement);
+		register_to_move = 0;
+		Direction_Movement = 0;
 		VAO1.Bind();
 		// Generates Vertex Buffer Object and links it to vertices
 		VBO VBO1(K1.vertices, K1.sizevertices);
@@ -395,34 +419,60 @@ VAO MoveSnake(VAO VAO1)
 
 		EBO EBO1(K1.indices, K1.sizeindices);
 
-		VAO1.LinkVBO(VBO1, 0);
-
+		VAO1.LinkVBO(VBO1
+, 0);
 		VAO1.Unbind();
 		VBO1.Unbind();
 		EBO1.Unbind();
 
 
 
-	
-		register_to_move = 0;
-		Direction_Movement = 0;
+
 		
+
+		prevtime = funtime;
 		return VAO1;
 	}
+
+
+
+
+
+
+
+
+
+
+	
+	
 	
 }
 
 
 VAO Game_over_wall(VAO VAO1)
 {
-	
 
-
-
+	GLfloat epsilon = 0.01;
+//	std::abs(K1.vertices[1] - K1.vertices[13 + i]) < epsilon
+// 
 	//colision snake
 	for (int i = 0; i != K1.vertNum; i = i + 12) {
-		if (K1.vertices[0] == K1.vertices[12 + i] && K1.vertices[1] == K1.vertices[13 + i])
-		{
+		
+
+		if (std::abs(K1.vertices[0] - K1.vertices[12 + i]) < epsilon 
+			&& std::abs(K1.vertices[1] - K1.vertices[13 + i]) < epsilon
+			
+			&& std::abs(K1.vertices[3] - K1.vertices[15 + i]) < epsilon
+			&& std::abs(K1.vertices[4] - K1.vertices[16 + i]) < epsilon
+
+			&& std::abs(K1.vertices[6] - K1.vertices[18 + i]) < epsilon
+			&& std::abs(K1.vertices[7] - K1.vertices[19 + i]) < epsilon
+			
+			
+			&& std::abs(K1.vertices[9] - K1.vertices[21 + i]) < epsilon
+			&& std::abs(K1.vertices[10] - K1.vertices[22 + i]) < epsilon){
+
+			speed_movement = 0;
 			K1.reset_snake();
 			K1.Number_additional_squares = 0;
 
@@ -441,18 +491,19 @@ VAO Game_over_wall(VAO VAO1)
 			return VAO1;
 		}
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	//colisiont to border
-	if ( ((K1.x == 100)||(K1.x==-100)) || ((K1.y == 100) || (K1.y == -100)))
+	if (((K1.x == 100) || (K1.x == -100)) || ((K1.y == 100) || (K1.y == -100)))
 	{
+		speed_movement = 0;
 
 		K1.reset_snake();
 		K1.Number_additional_squares = 0;
-		
+
 		VAO1.Bind();
 		// Generates Vertex Buffer Object and links it to vertices
 		VBO VBO1(K1.vertices, K1.sizevertices);
@@ -467,15 +518,13 @@ VAO Game_over_wall(VAO VAO1)
 		EBO1.Unbind();
 		return VAO1;
 	}
-     
-
-
-
-
-
-
 
 
 
 
 }
+
+
+
+
+

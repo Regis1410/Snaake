@@ -12,8 +12,14 @@
 class Fruit : public Kwadrat
 {
 public:
+
+
+	int xx=0;
+	int yy = 0;
 	Fruit();
 	void Fruit_location();
+	int x_fruit;
+	int y_fruit;
 };
 
 #endif
