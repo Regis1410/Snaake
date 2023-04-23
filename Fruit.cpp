@@ -5,7 +5,7 @@ void Fruit::Fruit_location()
 {
 	srand(time(0));
 	//random x 
-	int random_x = (rand() % 183) - 100;
+	 random_x = (rand() % 183) - 100;
 
 	
 
@@ -19,7 +19,7 @@ void Fruit::Fruit_location()
 
 
 	//random y
-	int random_y = (rand() % 183) - 100;
+	 random_y = (rand() % 183) - 100;
 
 	if (random_y % 10 != 0)
 	{
@@ -31,6 +31,13 @@ void Fruit::Fruit_location()
 
 
 	
+
+
+
+
+
+
+
 
 	//if fruit gets old fruit location 
 	while (random_x == this->xx && random_y == this->yy)

@@ -10,6 +10,7 @@
 #include"VBO.h"
 #include"EBO.h"
 #include "Kwadrat.h"
+#include "Fruit.h"
 class Wall : public Kwadrat
 {
 
@@ -17,8 +18,8 @@ public:
 	
 	int xx=0;
 	int yy=0;
-	Wall();
-	void Wall_location();
+	Wall(const Fruit& Fruit);
+	void Wall_location(const Fruit& Fruit);
 };
 
 #endif

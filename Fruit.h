@@ -20,6 +20,8 @@ public:
 	void Fruit_location();
 	int x_fruit;
 	int y_fruit;
+	int random_x;
+	int random_y;
 };
 
 #endif

@@ -12,9 +12,13 @@
 #include "Fruit.h"
 #include <iomanip>
 #include <cmath>
+#include <vector>
+
+
+std::vector<std::vector<GLfloat>> used_cord;
 Fruit f1;
 Kwadrat K1;
-Wall W1;
+Wall W1(f1);
 int register_to_grow=0;
 int register_to_move;
 int Direction_Movement;
@@ -520,7 +524,35 @@ VAO Game_over_wall(VAO VAO1)
 	}
 
 
+	//colission to wall
+/*
+	if (abs(K1.vertices[0] - W1.vertices[0] < epsilon) && (K1.vertices[1] - W1.vertices[1] < epsilon))
+	{
 
+		speed_movement = 0;
+
+			K1.reset_snake();
+			K1.Number_additional_squares = 0;
+
+			VAO1.Bind();
+			// Generates Vertex Buffer Object and links it to vertices
+			VBO VBO1(K1.vertices, K1.sizevertices);
+			// Generates Element Buffer Object and links it to indices
+
+			EBO EBO1(K1.indices, K1.sizeindices);
+
+		VAO1.LinkVBO(VBO1, 0);
+
+		VAO1.Unbind();
+		VBO1.Unbind();
+		EBO1.Unbind();
+		return VAO1;
+
+
+
+
+	}
+	*/
 
 }
 
