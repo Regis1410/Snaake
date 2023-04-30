@@ -1,4 +1,4 @@
 # Ugly_Snake
 To do:
--Improve walls
+-Realtime movement
 -Textures

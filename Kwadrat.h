@@ -34,6 +34,9 @@ public:
 	void reset_snake();
 	void X_y_addon_snake();
 	
+private:
+
+
 
 
 

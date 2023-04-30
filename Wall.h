@@ -16,8 +16,8 @@ class Wall : public Kwadrat
 
 public:
 	
-	int xx=0;
-	int yy=0;
+	int random_x;
+	int random_y;
 	Wall(const Fruit& Fruit);
 	void Wall_location(const Fruit& Fruit);
 };

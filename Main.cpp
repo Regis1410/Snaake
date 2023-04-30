@@ -456,7 +456,7 @@ VAO MoveSnake(VAO VAO1, double &prevtime, double &funtime)
 VAO Game_over_wall(VAO VAO1)
 {
 
-	GLfloat epsilon = 0.01;
+	GLfloat epsilon = 0.0000001;
 //	std::abs(K1.vertices[1] - K1.vertices[13 + i]) < epsilon
 // 
 	//colision snake

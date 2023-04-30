@@ -14,14 +14,20 @@ class Fruit : public Kwadrat
 public:
 
 
-	int xx=0;
-	int yy = 0;
+
 	Fruit();
-	void Fruit_location();
-	int x_fruit;
-	int y_fruit;
+	void Fruit_location();	
 	int random_x;
 	int random_y;
+
+private:
+
+	int previous_x = 0;
+	int previous_y = 0;
+	void Random_xy();
+	void check_xy();
+	GLfloat gfloat_random_x;
+	GLfloat gLfloat_random_y;
 };
 
 #endif
