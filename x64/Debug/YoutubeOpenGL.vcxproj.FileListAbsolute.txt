@@ -6,3 +6,4 @@ C:\Users\Kacper\Desktop\Snaake-main\x64\Debug\Snake01.exe
 C:\Users\Kacper\Desktop\Nowy folder (23)\Snaake-main\x64\Debug\Snake01.exe
 C:\Users\Kacper\Desktop\Nowy folder (23)\Nowy folder\Snaake\x64\Debug\Snake01.exe
 C:\Users\Kacper\Desktop\Nowy folder (25)\Snaake\x64\Debug\Snake01.exe
+C:\Users\Kacper\Desktop\sn\Snaake\x64\Debug\Snake01.exe

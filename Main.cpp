@@ -13,6 +13,7 @@
 #include <iomanip>
 #include <cmath>
 #include <vector>
+#include <iomanip>
 
 
 std::vector<std::vector<GLfloat>> used_cord;
@@ -423,8 +424,7 @@ VAO MoveSnake(VAO VAO1, double &prevtime, double &funtime)
 
 		EBO EBO1(K1.indices, K1.sizeindices);
 
-		VAO1.LinkVBO(VBO1
-, 0);
+		VAO1.LinkVBO(VBO1, 0);
 		VAO1.Unbind();
 		VBO1.Unbind();
 		EBO1.Unbind();
@@ -452,11 +452,16 @@ VAO MoveSnake(VAO VAO1, double &prevtime, double &funtime)
 	
 }
 
+bool AreSame(GLfloat a, GLfloat b)
+{
+	GLfloat c = 0.01f;
+	return abs(a - b) < c;
+}
 
 VAO Game_over_wall(VAO VAO1)
 {
 
-	GLfloat epsilon = 0.0000001;
+	GLfloat epsilon = 1e-9;
 //	std::abs(K1.vertices[1] - K1.vertices[13 + i]) < epsilon
 // 
 	//colision snake
@@ -524,12 +529,18 @@ VAO Game_over_wall(VAO VAO1)
 	}
 
 
+	
+	
+	std::cout << AreSame(K1.vertices[0], W1.vertices[0])<<std::endl;
+	std::cout << AreSame(K1.vertices[1], W1.vertices[1]) << std::endl;
+	
 	//colission to wall
-/*
-	if (abs(K1.vertices[0] - W1.vertices[0] < epsilon) && (K1.vertices[1] - W1.vertices[1] < epsilon))
+	int i = 5;
+	if (AreSame(K1.vertices[0], W1.vertices[0])==1&& AreSame(K1.vertices[1], W1.vertices[1]))
 	{
-
-		speed_movement = 0;
+	
+		
+			speed_movement = 0;
 
 			K1.reset_snake();
 			K1.Number_additional_squares = 0;
@@ -541,18 +552,18 @@ VAO Game_over_wall(VAO VAO1)
 
 			EBO EBO1(K1.indices, K1.sizeindices);
 
-		VAO1.LinkVBO(VBO1, 0);
+			VAO1.LinkVBO(VBO1, 0);
 
-		VAO1.Unbind();
-		VBO1.Unbind();
-		EBO1.Unbind();
-		return VAO1;
+			VAO1.Unbind();
+			VBO1.Unbind();
+			EBO1.Unbind();
+			return VAO1;
 
-
+		
 
 
 	}
-	*/
+	
 
 }
 
